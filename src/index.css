@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 33% 97%;
+    --foreground: 30 10% 20%;
+
+    --card: 45 40% 95%;
+    --card-foreground: 30 10% 20%;
+
+    --popover: 45 40% 95%;
+    --popover-foreground: 30 10% 20%;
+
+    --primary: 45 90% 55%;
+    --primary-foreground: 30 10% 15%;
+
+    --secondary: 200 25% 85%;
+    --secondary-foreground: 200 30% 25%;
+
+    --muted: 40 20% 90%;
+    --muted-foreground: 30 10% 45%;
+
+    --accent: 25 80% 60%;
+    --accent-foreground: 25 80% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 25% 85%;
+    --input: 40 25% 85%;
+    --ring: 45 90% 55%;
+
+    --radius: 1rem;
+
+    --duck-yellow: 45 95% 58%;
+    --duck-orange: 30 90% 55%;
+    --duck-cream: 45 50% 93%;
+    --therapy-blue: 200 30% 75%;
+    --therapy-green: 150 35% 60%;
+    --certificate-gold: 42 85% 50%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 30 10% 10%;
+    --foreground: 45 30% 90%;
+    --card: 30 10% 14%;
+    --card-foreground: 45 30% 90%;
+    --popover: 30 10% 14%;
+    --popover-foreground: 45 30% 90%;
+    --primary: 45 90% 55%;
+    --primary-foreground: 30 10% 10%;
+    --secondary: 200 20% 25%;
+    --secondary-foreground: 200 25% 85%;
+    --muted: 30 10% 20%;
+    --muted-foreground: 40 15% 60%;
+    --accent: 25 80% 50%;
+    --accent-foreground: 25 80% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 30 10% 22%;
+    --input: 30 10% 22%;
+    --ring: 45 90% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+@layer utilities {
+  /* Duck nodding animation */
+  @keyframes duck-nod {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(8deg); }
+    50% { transform: rotate(-3deg); }
+    75% { transform: rotate(5deg); }
+  }
+
+  @keyframes duck-idle {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-4px) rotate(1deg); }
+  }
+
+  @keyframes duck-quack {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.05) rotate(-2deg); }
+    30% { transform: scale(1) rotate(2deg); }
+    45% { transform: scale(1.03); }
+  }
+
+  @keyframes float-bubble {
+    0% { opacity: 0; transform: translateY(10px) scale(0.8); }
+    20% { opacity: 1; transform: translateY(0) scale(1); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes stamp {
+    0% { transform: scale(3) rotate(-15deg); opacity: 0; }
+    60% { transform: scale(1) rotate(5deg); opacity: 1; }
+    80% { transform: scale(1.05) rotate(-2deg); }
+    100% { transform: scale(1) rotate(3deg); opacity: 1; }
+  }
+
+  @keyframes ripple {
+    0% { transform: scale(0); opacity: 0.6; }
+    100% { transform: scale(4); opacity: 0; }
+  }
+
+  .animate-duck-nod {
+    animation: duck-nod 0.8s ease-in-out;
+  }
+
+  .animate-duck-idle {
+    animation: duck-idle 3s ease-in-out infinite;
+  }
+
+  .animate-duck-quack {
+    animation: duck-quack 0.5s ease-in-out;
+  }
+
+  .animate-float-bubble {
+    animation: float-bubble 0.4s ease-out forwards;
+  }
+
+  .animate-stamp {
+    animation: stamp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  .animate-ripple {
+    animation: ripple 0.6s ease-out;
+  }
+}
